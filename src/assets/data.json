@@ -1,0 +1,33 @@
+{
+  "nickname": "Ghuysu",
+  "fullname": "Dao Phuoc Gia Huy",
+  "about": "Fourth-year IT student specializing in JavaScript development with hands-on experience in fullstack web technologies. Passionate about creating scalable web applications and eager to contribute as a team player in a dynamic development environment. Dedicated to continuous learning and professional growth with a clear goal of advancing to a Junior Developer role within the next two years.",
+  "contact": {
+    "email": "daogiahuysu@gmail.com",
+    "address": "Lien Chieu, Da Nang",
+    "github": "https://github.com/ghuysu",
+    "linkedIn": "https://www.linkedin.com/in/ghuysu/",
+    "facebook": "https://www.facebook.com/ghuy.1011/"
+  },
+  "role": [
+    "Fullstack Web Developer",
+    "Backend Developer",
+    "Frontend Developer"
+  ],
+  "education": {
+    "university": {
+      "name": "Da Nang University of Science and Technology",
+      "time": "2021-2026",
+      "degree": "Bachelor of Engineering"
+    },
+    "certificates": []
+  },
+  "skills": {
+    "backend": [],
+    "frontend": [],
+    "data_storage": [],
+    "others": []
+  },
+  "projects": [],
+  "experience": []
+}
