@@ -23,7 +23,7 @@ function App() {
   const fifthBar = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    fetch('/src/assets/data.json')
+    fetch('assets/data.json')
       .then((response) => response.json())
       .then((data) => setData(data))
       .catch((error) => console.error(error));
