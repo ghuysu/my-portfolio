@@ -9,9 +9,10 @@ import Education from './pages/Education';
 import Experience from './pages/Experience';
 import { Data } from './interface';
 import { gsap } from 'gsap';
+import jsonData from './data.json'
 
 function App() {
-  const [data, setData] = useState<Data | null>(null);
+  const data: Data = jsonData;
   const [path, setPath] = useState('/');
   const [loading, setLoading] = useState(true);
 
@@ -21,13 +22,6 @@ function App() {
   const thirdBar = useRef<HTMLDivElement>(null);
   const fourthBar = useRef<HTMLDivElement>(null);
   const fifthBar = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    fetch('src/data.json')
-      .then((response) => response.json())
-      .then((data) => setData(data))
-      .catch((error) => console.error(error));
-  }, []);
 
   useEffect(() => {
     setLoading(true);
