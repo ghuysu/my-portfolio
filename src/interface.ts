@@ -4,6 +4,7 @@ interface Contact {
   github: string;
   linkedIn: string;
   facebook: string;
+  cv: string;
 }
 
 interface University {
@@ -24,6 +25,12 @@ interface Skills {
   others: string[];
 }
 
+interface Statistics {
+  numberOfCompletedProjects: number;
+  numberOfCertificates: number;
+  numberOfDegrees: number;
+}
+
 export interface Data {
   nickname: string;
   fullname: string;
@@ -34,4 +41,25 @@ export interface Data {
   skills: Skills;
   projects: string[];
   experience: string[];
+  statistics: Statistics;
+}
+
+export interface HomeProps {
+  fullname: string;
+  about: string;
+  contact: Contact;
+  role: string[];
+}
+
+export interface RightSectionProps {
+  fullname: string;
+  about: string;
+  contact: Contact;
+  role: string[];
+}
+
+export interface AnimationBarsProps {
+  loading: boolean;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  path: string;
 }

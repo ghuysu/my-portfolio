@@ -20,7 +20,7 @@ const Nav: React.FC<NavProps> = ({ path }) => {
         <Link
           to={link.path}
           key={index}
-          className={`text-main_gray font-semibold py-2 border-t-0 border-l-0 border-r-0 border-b-4 hover:text-main_red ${
+          className={`text-white font-medium py-2 border-t-0 border-l-0 border-r-0 border-b-4 hover:text-main_red ${
             path === link.path && 'border-main_red border-solid'
           }`}
         >

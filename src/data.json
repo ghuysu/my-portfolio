@@ -7,13 +7,10 @@
     "address": "Lien Chieu, Da Nang",
     "github": "https://github.com/ghuysu",
     "linkedIn": "https://www.linkedin.com/in/ghuysu/",
-    "facebook": "https://www.facebook.com/ghuy.1011/"
+    "facebook": "https://www.facebook.com/ghuy.1011/",
+    "cv": "https://drive.google.com/file/d/1ufTcJrD06-IqtHyJIUhxU2r_AscGTgbX/view?usp=sharing"
   },
-  "role": [
-    "Fullstack Web Developer",
-    "Backend Developer",
-    "Frontend Developer"
-  ],
+  "role": ["Fullstack Developer", "Backend Developer", "Frontend Developer"],
   "education": {
     "university": {
       "name": "Da Nang University of Science and Technology",
@@ -29,5 +26,10 @@
     "others": []
   },
   "projects": [],
-  "experience": []
+  "experience": [],
+  "statistics": {
+    "numberOfCompletedProjects": 12,
+    "numberOfCertificates": 1,
+    "numberOfDegrees": 1
+  }
 }
