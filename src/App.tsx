@@ -2,14 +2,13 @@ import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
-import About from './pages/About';
 import Projects from './pages/Projects';
-import Skills from './pages/Skills';
-import Education from './pages/Education';
-import Experience from './pages/Experience';
 import { Data } from './interface';
 import jsonData from './data.json';
 import AnimationBars from './components/AnimationBars';
+import Services from './pages/Services';
+import About from './pages/About';
+import Contact from './pages/Contact';
 
 function App() {
   const data: Data = jsonData;
@@ -19,8 +18,8 @@ function App() {
   return (
     <Router>
       <div>
-        <AnimationBars path={path} loading={loading} setLoading={setLoading}/>
-        <div className={`relative ${loading && 'hidden'}`}>
+        <AnimationBars path={path} loading={loading} setLoading={setLoading} />
+        <div className={`relative ${loading && 'hidden'} overflow-y-auto`}>
           <Header nickname={data?.nickname} path={path} setPath={setPath} />
           <Routes>
             <Route
@@ -34,11 +33,10 @@ function App() {
                 />
               }
             />
+            <Route path="/services" element={<Services services={data.services} />} />
             <Route path="/about" element={<About />} />
-            <Route path="/skills" element={<Skills />} />
-            <Route path="/education" element={<Education />} />
-            <Route path="/experience" element={<Experience />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />}/>
           </Routes>
         </div>
       </div>

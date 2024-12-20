@@ -31,6 +31,11 @@ interface Statistics {
   numberOfDegrees: number;
 }
 
+interface Service {
+  name: string;
+  description: string;
+}
+
 export interface Data {
   nickname: string;
   fullname: string;
@@ -42,6 +47,7 @@ export interface Data {
   projects: string[];
   experience: string[];
   statistics: Statistics;
+  services: Service[];
 }
 
 export interface HomeProps {
@@ -62,4 +68,8 @@ export interface AnimationBarsProps {
   loading: boolean;
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
   path: string;
+}
+
+export interface ServicesProps {
+  services: Service[];
 }

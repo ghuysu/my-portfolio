@@ -2,25 +2,26 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 const LeftSection = () => {
-    const [isNotLaptop, setIsNotLapTop] = useState(window.innerWidth <= 780);
-    
-    useEffect(() => {
-      const handleResize = () => setIsNotLapTop(window.innerWidth < 1024);
-      window.addEventListener('resize', handleResize);
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
-    }, []);
+  const [isNotLaptop, setIsNotLapTop] = useState(window.innerWidth <= 780);
 
-    useEffect(() => console.log(isNotLaptop), [isNotLaptop])
-  
+  useEffect(() => {
+    const handleResize = () => setIsNotLapTop(window.innerWidth < 1024);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <div className="w-[320px] h-full md:h-[280px] sm:h-[280px] flex flex-col items-center justify-center relative">
-      {/* Vòng tròn quay với Framer Motion */}
       <motion.svg
-        viewBox={isNotLaptop ? "0 0 280 280" : "0 0 506 506"}
+        viewBox={isNotLaptop ? '0 0 280 280' : '0 0 506 506'}
         xmlns="http://www.w3.org/2000/svg"
-        className={isNotLaptop? "w-[280px] h-[280px] absolute" : "w-96 h-96 absolute -bottom-[38px]"}
+        className={
+          isNotLaptop
+            ? 'w-[280px] h-[280px] absolute'
+            : 'w-96 h-96 absolute -bottom-[38px]'
+        }
         animate={{
           rotate: 360,
         }}
@@ -29,11 +30,12 @@ const LeftSection = () => {
           repeat: Infinity,
           repeatType: 'loop',
         }}
+        fill='transparent'
       >
         <motion.circle
-          cx={isNotLaptop ? "140" : "252"}
-          cy={isNotLaptop ? "140" : "252"}
-          r={isNotLaptop ? "135" : "225"}
+          cx={isNotLaptop ? '140' : '252'}
+          cy={isNotLaptop ? '140' : '252'}
+          r={isNotLaptop ? '135' : '225'}
           stroke="#e50815"
           strokeWidth="4"
           strokeLinecap="round"

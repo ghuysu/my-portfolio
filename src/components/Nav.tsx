@@ -1,17 +1,9 @@
 import { Link } from 'react-router-dom';
+import {links} from '../links'
 
 interface NavProps {
   path: string;
 }
-
-const links = [
-  { name: 'Home', path: '/' },
-  { name: 'About', path: '/about' },
-  { name: 'Education', path: '/education' },
-  { name: 'Skills', path: '/skills' },
-  { name: 'Projects', path: '/projects' },
-  { name: 'Experience', path: '/experience' },
-];
 
 const Nav: React.FC<NavProps> = ({ path }) => {
   return (
@@ -20,13 +12,19 @@ const Nav: React.FC<NavProps> = ({ path }) => {
         <Link
           to={link.path}
           key={index}
-          className={`text-white font-medium py-2 border-t-0 border-l-0 border-r-0 border-b-4 hover:text-main_red ${
+          className={`text-black font-medium py-2 border-t-0 border-l-0 border-r-0 border-b-4 hover:text-main_red ${
             path === link.path && 'border-main_red border-solid'
           }`}
         >
           {link.name}
         </Link>
       ))}
+      <Link
+        to="/contact"
+        className={`flex items-center font-semibold text-base px-4 py-1 rounded-full hover:bg-main_red hover:text-black transition-colors duration-300 ${path === '/contact' ? 'bg-main_red text-black' : 'text-white bg-main_red'}`}
+      >
+        Contact me
+      </Link>
     </nav>
   );
 };

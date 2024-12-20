@@ -19,6 +19,24 @@
     },
     "certificates": []
   },
+  "services": [
+    {
+      "name": "API Development",
+      "description": "Develop and maintain robust APIs for web and mobile platforms, ensuring seamless integration through clear and comprehensive API documentation."
+    },
+    {
+      "name": "Web UI Development",
+      "description": "Build responsive and user-friendly web interfaces based on design specifications, with seamless API integration."
+    },
+    {
+      "name": "Web Development",
+      "description": "Deliver end-to-end web solutions by developing both frontend and backend components, including APIs and user interfaces."
+    },
+    {
+      "name": "IoT Server Development",
+      "description": "Develop and maintain the server-side infrastructure for IoT solutions, focusing on device communication, data processing, and integration with cloud platforms for real-time monitoring and control."
+    }
+  ],
   "skills": {
     "backend": [],
     "frontend": [],

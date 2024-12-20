@@ -38,25 +38,40 @@ const RightSection: React.FC<RightSectionProps> = ({
     <div className="text-center xl:text-left lg:text-left flex-1">
       <p className="mt-4 text-main_red text-2xl">
         <span ref={roleRef} className="font-semibold inline-block">
-          <span className="text-white"> -</span>
+          <span className="text-black"> -</span>
           {currentRole}
-          <span className="text-white"> -</span>
+          <span className="text-black"> -</span>
         </span>
       </p>
       <h1 className="text-4xl md:text-5xl font-bold mt-4">
-        Hello, <br></br>I&apos;m{' '}
+        Hi<img src='/public/assets/images/greeting-icon.png' className='w-12 inline-block mb-3 ml-2' alt='greeting icon'/>, <br></br>I&apos;m{' '}
         <span className="text-main_red">{fullname}</span>
       </h1>
       <p className="mt-10 text-justify">{about}</p>
 
       {/* Buttons and Social Icons */}
-      <div className="mt-6 flex flex-col md:flex-row items-center justify-center lg:justify-start">
+      <div className="mt-6 flex flex-col md:flex-row items-center justify-center lg:justify-start gap-x-3">
+        <div className="flex flex-row gap-4 text-3xl">
+          <a
+            href={contact.github}
+            className="hover:text-main_red transition text-3xl"
+          >
+            <i className="fab fa-github"></i>
+          </a>
+          <a
+            href={contact.linkedIn}
+            className="hover:text-main_red transition text-3xl"
+          >
+            <i className="fab fa-linkedin"></i>
+          </a>
+        </div>
         <a
           href={contact.cv}
           target="_blank"
           rel="noopener noreferrer"
+          className="ml-4"
         >
-          <button className="bg-transparent font-semibold border-2 border-main_red border-solid text-main_red px-6 py-2 rounded-full hover:bg-main_red hover:text-white transition">
+          <button className="font-semibold text-base px-6 py-2 rounded-full bg-main_red text-white hover:bg-white hover:text-main_red transition">
             Check my Resume/CV
           </button>
         </a>
