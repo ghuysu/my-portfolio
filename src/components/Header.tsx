@@ -27,7 +27,7 @@ const Header: React.FC<HeaderProps> = ({ nickname, path, setPath }) => {
 
   return (
     <div className="relative">
-      <header className="flex justify-between items-center lg:px-16 md:px-6 px-6 py-4 relative bg-gradient-to-b from-gray-100 to-gray-50">
+      <header className="flex justify-between items-center lg:px-16 md:px-6 px-6 py-4 relative bg-gradient-to-b from-zinc-100 to-zinc-50">
         <div>
           <p className="text-3xl font-bold text-main_red">
             {nickname}
