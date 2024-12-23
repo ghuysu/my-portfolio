@@ -7,22 +7,15 @@ interface Contact {
   cv: string;
 }
 
-interface University {
+interface Certificate {
   name: string;
   time: string;
-  degree: string;
+  location: string;
 }
 
-interface Education {
-  university: University;
-  certificates: string[];
-}
-
-interface Skills {
-  backend: string[];
-  frontend: string[];
-  data_storage: string[];
-  others: string[];
+interface Skill {
+  name: string;
+  list: Item[];
 }
 
 interface Statistics {
@@ -36,18 +29,23 @@ interface Service {
   description: string;
 }
 
+interface Item {
+  name: string;
+  value: string;
+}
+
 export interface Data {
   nickname: string;
   fullname: string;
   about: string;
   contact: Contact;
   role: string[];
-  education: Education;
-  skills: Skills;
+  education: Certificate[];
+  skills: Skill[];
   projects: string[];
-  experience: string[];
   statistics: Statistics;
   services: Service[];
+  summary: Item[];
 }
 
 export interface HomeProps {
@@ -72,4 +70,34 @@ export interface AnimationBarsProps {
 
 export interface ServicesProps {
   services: Service[];
+}
+
+export interface AboutProps {
+  summary: Item[];
+  education: Certificate[];
+  skills: Skill[];
+}
+
+export interface AboutLeftSectionProps {
+  path: string;
+  setPath: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export interface AboutRightSectionProps {
+  summary: Item[];
+  education: Certificate[];
+  skills: Skill[];
+  path: string;
+}
+
+export interface AboutMeProps {
+  summary: Item[];
+}
+
+export interface EducationProps {
+  education: Certificate[];
+}
+
+export interface SkillsProps {
+  skills: Skill[];
 }

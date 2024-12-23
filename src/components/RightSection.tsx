@@ -44,8 +44,13 @@ const RightSection: React.FC<RightSectionProps> = ({
         </span>
       </p>
       <h1 className="text-4xl md:text-5xl font-bold mt-4">
-        Hi<img src='/assets/images/greeting-icon.png' className='w-12 inline-block mb-3 ml-2' alt='greeting icon'/>, <br></br>I&apos;m{' '}
-        <span className="text-main_red">{fullname}</span>
+        Hi
+        <img
+          src="/assets/images/greeting-icon.png"
+          className="w-12 inline-block mb-3 ml-2"
+          alt="greeting icon"
+        />
+        , <br></br>I&apos;m <span className="text-main_red">{fullname}</span>
       </h1>
       <p className="mt-10 text-justify">{about}</p>
 

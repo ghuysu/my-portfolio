@@ -33,10 +33,22 @@ function App() {
                 />
               }
             />
-            <Route path="/services" element={<Services services={data.services} />} />
-            <Route path="/about" element={<About />} />
+            <Route
+              path="/services"
+              element={<Services services={data.services} />}
+            />
+            <Route
+              path="/about"
+              element={
+                <About
+                  summary={data.summary}
+                  education={data.education}
+                  skills={data.skills}
+                />
+              }
+            />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />}/>
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import {links} from '../links'
+import { links } from '../links';
 
 interface NavProps {
   path: string;

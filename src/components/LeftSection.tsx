@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 const LeftSection = () => {
-  const [isNotLaptop, setIsNotLapTop] = useState(window.innerWidth <= 780);
+  const [isNotLaptop, setIsNotLapTop] = useState(window.innerWidth < 1024);
 
   useEffect(() => {
     const handleResize = () => setIsNotLapTop(window.innerWidth < 1024);
@@ -30,7 +30,7 @@ const LeftSection = () => {
           repeat: Infinity,
           repeatType: 'loop',
         }}
-        fill='transparent'
+        fill="transparent"
       >
         <motion.circle
           cx={isNotLaptop ? '140' : '252'}
@@ -55,7 +55,7 @@ const LeftSection = () => {
       </motion.svg>
 
       <img
-        src="https://i.ibb.co/pfvssCh/circular-crop.png"
+        src="/assets/images/avatar.png"
         alt="Profile"
         className="object-cover xl:w-[320px] lg:w-[320px] w-[250px] z-[2] xl:mb-[30px] lg:mb-[30px]"
       />

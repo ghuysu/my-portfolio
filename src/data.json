@@ -10,15 +10,39 @@
     "facebook": "https://www.facebook.com/ghuy.1011/",
     "cv": "https://drive.google.com/file/d/1ufTcJrD06-IqtHyJIUhxU2r_AscGTgbX/view?usp=sharing"
   },
+  "summary": [
+    { "name": "Name", "value": "Dao Phuoc Gia Huy" },
+    { "name": "Phone", "value": "(+84) 386 658 351" },
+    { "name": "Sex", "value": "Male" },
+    { "name": "Languages", "value": "Vietnamese, English" },
+    { "name": "Nationality", "value": "Viet Nam" },
+    { "name": "Email", "value": "daogiahuysu@gmail.com" },
+    { "name": "Year of birth", "value": "2003" },
+    { "name": "Residence", "value": "Da Nang, Viet Nam" }
+  ],
   "role": ["Fullstack Developer", "Backend Developer", "Frontend Developer"],
-  "education": {
-    "university": {
-      "name": "Da Nang University of Science and Technology",
-      "time": "2021-2026",
-      "degree": "Bachelor of Engineering"
+  "education": [
+    {
+      "location": "Da Nang University of Science and Technology",
+      "time": "2021 - 2026",
+      "name": "Engineering Degree in Information Technology"
     },
-    "certificates": []
-  },
+    {
+      "location": "Global English certificate",
+      "time": "2025",
+      "name": "TOEIC 800"
+    },
+    {
+      "location": "Udemy",
+      "time": "2023",
+      "name": "Node.js - The complete guide course"
+    },
+    {
+      "location": "Udemy",
+      "time": "2024",
+      "name": "NestJS Microservices course"
+    }
+  ],
   "services": [
     {
       "name": "API Development",
@@ -37,14 +61,59 @@
       "description": "Develop and maintain the server-side infrastructure for IoT solutions, focusing on device communication, data processing, and integration with cloud platforms for real-time monitoring and control."
     }
   ],
-  "skills": {
-    "backend": [],
-    "frontend": [],
-    "data_storage": [],
-    "others": []
-  },
+  "skills": [
+    {
+      "name": "Programming languages",
+      "list": [
+        { "name": "Javascript", "value": "/assets/images/js-icon.png" },
+        { "name": "Typescript", "value": "/assets/images/ts-icon.png" },
+        { "name": "Java", "value": "/assets/images/java-icon.png" },
+        { "name": "Python", "value": "/assets/images/python-icon.png" },
+        { "name": "C++", "value": "/assets/images/cpp-icon.png" },
+        { "name": "HTML", "value": "/assets/images/html-icon.png" },
+        { "name": "CSS", "value": "/assets/images/css-icon.png" }
+      ]
+    },
+    {
+      "name": "Frontend development",
+      "list": [
+        { "name": "React", "value": "/assets/images/react-icon.png" },
+        { "name": "Tailwind CSS", "value": "/assets/images/tailwind-icon.png" },
+        { "name": "Bootstrap", "value": "/assets/images/bootstrap-icon.svg" }
+      ]
+    },
+    {
+      "name": "Backend development",
+      "list": [
+        { "name": "Node.js", "value": "/assets/images/nodejs-icon.png" },
+        { "name": "Express.js", "value": "/assets/images/expressjs-icon.png" },
+        { "name": "NestJS", "value": "/assets/images/nestjs-icon.png" },
+        { "name": "Flask", "value": "/assets/images/flask-icon.png" },
+        { "name": "Docker", "value": "/assets/images/docker-icon.png" },
+        { "name": "Postman", "value": "/assets/images/postman-icon.png" }
+      ]
+    },
+    {
+      "name": "Data storages",
+      "list": [
+        { "name": "MongoDB", "value": "/assets/images/mongodb-icon.png" },
+        { "name": "MySQL", "value": "/assets/images/mysql-icon.png" },
+        { "name": "PostgreSQL", "value": "/assets/images/postgresql-icon.png" },
+        { "name": "Redis", "value": "/assets/images/redis-icon.png" },
+        { "name": "AWS S3", "value": "/assets/images/awss3-icon.png" }
+      ]
+    },
+    {
+      "name": "Others",
+      "list": [
+        { "name": "Git", "value": "/assets/images/git-icon.png" },
+        { "name": "Github", "value": "/assets/images/github-icon.png" },
+        { "name": "Gitlab", "value": "/assets/images/gitlab-icon.png" },
+        { "name": "CI/CD", "value": "/assets/images/cicd-icon.png" }
+      ]
+    }
+  ],
   "projects": [],
-  "experience": [],
   "statistics": {
     "numberOfCompletedProjects": 12,
     "numberOfCertificates": 1,
