@@ -5,57 +5,90 @@ const contactOptions = [
   'Hiring for a position',
   'Doing freelancer work',
   'Communicating/Making friends',
+  'Others',
 ];
 
-const checkEmail = (email: string): boolean => {
+const validateInput = (email: string, phone: string, title: number) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
-};
-const checkPhoneNumber = (phone: string): boolean => {
   const phoneRegex = /^(\+?\d{1,3})?(\d{8,15})$/;
-  return phoneRegex.test(phone);
+
+  return {
+    isValidEmail: emailRegex.test(email),
+    isValidPhone: phone ? phoneRegex.test(phone) : true,
+    isSelectedTitle: title !== 0,
+  };
 };
 
 const ContactLeftSection = () => {
-  const [firstname, setFirstname] = useState('');
-  const [lastname, setLastname] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [title, setTitle] = useState('');
-  const [message, setMessage] = useState('');
-  const [isValidEmail, setValidEmail] = useState<boolean>(true);
-  const [isValidPhone, setValidPhone] = useState<boolean>(true);
-  const [isSelectedTitle, setSelectedTitle] = useState<boolean>(true);
+  const [formData, setFormData] = useState({
+    firstname: '',
+    lastname: '',
+    email: '',
+    phone: '',
+    title: 0,
+    message: '',
+  });
+  const [validation, setValidation] = useState({
+    isValidEmail: true,
+    isValidPhone: true,
+    isSelectedTitle: true,
+  });
+  const [isSending, setSending] = useState(false);
 
-  const sendEmail = () => {
-    if (!checkEmail(email)) {
-      setValidEmail(false);
-    } else {
-      setValidEmail(true);
-    }
+  const handleInputChange = (field: string, value: string | number) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
 
-    if (phone && !checkPhoneNumber(phone)) {
-      setValidPhone(false);
-    } else {
-      setValidPhone(true);
-    }
+  const sendEmail = async () => {
+    const { email, phone, title } = formData;
+    const { isValidEmail, isValidPhone, isSelectedTitle } = validateInput(
+      email,
+      phone,
+      title,
+    );
 
-    if (title === '') {
-      setSelectedTitle(false);
-    } else {
-      setSelectedTitle(true);
-    }
+    setValidation({ isValidEmail, isValidPhone, isSelectedTitle });
 
-    if (isValidEmail && isValidPhone && isSelectedTitle) {
-      console.log({firstname, lastname, email, phone, title, message})
-      return;
+    if (!isValidEmail || !isValidPhone || !isSelectedTitle) return;
+
+    setSending(true);
+    try {
+      const response = await fetch('https://my-portfolio-backend-puce.vercel.app/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          title: contactOptions[formData.title],
+          time: Date.now(),
+        }),
+      });
+
+      if (response.ok) {
+        console.log('Email sent successfully');
+        setFormData({
+          firstname: '',
+          lastname: '',
+          email: '',
+          phone: '',
+          title: 0,
+          message: '',
+        });
+      } else {
+        console.error('Failed to send email');
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+    } finally {
+      setSending(false);
     }
   };
 
   return (
     <div className="flex flex-col gap-y-6 p-6 rounded-xl bg-gray-300">
       <p className="text-2xl font-bold text-black">Let's work together</p>
-      <p className="text-xs font-extralight text-zinc-800">
+      <p className="text-xs font-light text-zinc-800">
         Thank you for your interest! Please fill out the form below to share
         your information and purpose of contact. Whether you’re hiring, looking
         for collaboration, or simply connecting, I look forward to hearing from
@@ -74,14 +107,16 @@ const ContactLeftSection = () => {
             placeholder="Firstname"
             required
             className="w-full bg-gray-100 text-xs p-3 rounded-md"
-            onChange={(event) => setFirstname(event.target.value)}
+            onChange={(e) => handleInputChange('firstname', e.target.value)}
+            value={formData.firstname}
           />
           <input
             type="text"
             placeholder="Lastname"
             required
             className="w-full bg-gray-100 text-xs p-3 rounded-md"
-            onChange={(event) => setLastname(event.target.value)}
+            onChange={(e) => handleInputChange('lastname', e.target.value)}
+            value={formData.lastname}
           />
           <div className="flex flex-col items-end">
             <input
@@ -89,9 +124,10 @@ const ContactLeftSection = () => {
               placeholder="Email address"
               required
               className="w-full bg-gray-100 text-xs p-3 rounded-md"
-              onChange={(event) => setEmail(event.target.value)}
+              onChange={(e) => handleInputChange('email', e.target.value)}
+              value={formData.email}
             />
-            {!isValidEmail && (
+            {!validation.isValidEmail && (
               <p className="text-xs text-main_red font-extralight pr-1">
                 Please enter a valid email
               </p>
@@ -102,9 +138,10 @@ const ContactLeftSection = () => {
               type="text"
               placeholder="Phone number(optional)"
               className="w-full bg-gray-100 text-xs p-3 rounded-md"
-              onChange={(event) => setPhone(event.target.value)}
+              onChange={(e) => handleInputChange('phone', e.target.value)}
+              value={formData.phone}
             />
-            {!isValidPhone && (
+            {!validation.isValidPhone && (
               <p className="text-xs text-main_red font-extralight pr-1">
                 Please enter a valid phone number
               </p>
@@ -113,21 +150,18 @@ const ContactLeftSection = () => {
         </div>
         <div className="flex flex-col items-end">
           <select
-            defaultValue={0}
+            value={formData.title}
             className="text-xs p-3 rounded-md w-full"
-            onChange={(event) => {
-              setTitle(contactOptions[Number(event.target.value)]);
-            }}
+            onChange={(e) => handleInputChange('title', Number(e.target.value))}
             required
           >
-            <option value={0} disabled className="text-zinc-500">
-              {contactOptions[0]}
-            </option>
-            <option value={1}>{contactOptions[1]}</option>
-            <option value={2}>{contactOptions[2]}</option>
-            <option value={3}>{contactOptions[3]}</option>
+            {contactOptions.map((option, index) => (
+              <option key={index} value={index} disabled={index === 0}>
+                {option}
+              </option>
+            ))}
           </select>
-          {!isSelectedTitle && (
+          {!validation.isSelectedTitle && (
             <p className="text-xs text-main_red font-extralight pr-1">
               Please select a type of contact
             </p>
@@ -137,15 +171,16 @@ const ContactLeftSection = () => {
           rows={10}
           className="rounded-md text-xs p-3"
           placeholder="Type your message here"
-          onChange={(event) => setMessage(event.target.value)}
+          onChange={(e) => handleInputChange('message', e.target.value)}
           required
+          value={formData.message}
         ></textarea>
         <div className="w-full flex justify-end">
           <button
             type="submit"
             className="w-1/3 py-3 px-4 bg-white text-main_red text-sm font-bold rounded-lg hover:bg-main_red hover:text-white transition-colors duration-150"
           >
-            Send message
+            {isSending ? 'Sending' : 'Send message'}
           </button>
         </div>
       </form>
