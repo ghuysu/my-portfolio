@@ -16,7 +16,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   return (
-    <Router basename="/">
+    <Router>
       <div>
         <AnimationBars path={path} loading={loading} setLoading={setLoading} />
         <div className={`relative ${loading && 'hidden'} overflow-y-auto`}>
