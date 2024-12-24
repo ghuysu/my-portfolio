@@ -48,7 +48,16 @@ function App() {
               }
             />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route
+              path="/contact"
+              element={
+                <Contact
+                  address={data.contact.address}
+                  email={data.contact.email}
+                  phone={data.contact.phone}
+                />
+              }
+            />
           </Routes>
         </div>
       </div>

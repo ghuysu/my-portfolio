@@ -5,6 +5,7 @@ interface Contact {
   linkedIn: string;
   facebook: string;
   cv: string;
+  phone: string;
 }
 
 interface Certificate {
@@ -100,4 +101,16 @@ export interface EducationProps {
 
 export interface SkillsProps {
   skills: Skill[];
+}
+
+export interface ContactRightSectionProps {
+  email: string;
+  address: string;
+  phone: string;
+}
+
+export interface ContactProps {
+  email: string;
+  address: string;
+  phone: string;
 }

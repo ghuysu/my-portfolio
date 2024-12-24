@@ -7,8 +7,8 @@ const Services: React.FC<ServicesProps> = ({ services }) => {
         {services.map((service, index) => (
           <div
             key={index}
-            className="flex flex-col gap-y-3 md:gap-y-5 lg:gap-y-8 border-t-0 pb-4 border-l-0 border-r-0 border-b-[1px] border-solid border-black relative group"
-          > 
+            className="flex flex-col gap-y-3 border-t-0 pb-4 border-l-0 border-r-0 border-b-[1px] border-solid border-black relative group"
+          >
             <p className="text-base font-extrabold group-hover:text-main_red">{`0${index + 1}.`}</p>
             <p className="text-xl font-bold group-hover:text-main_red">
               {service.name}
