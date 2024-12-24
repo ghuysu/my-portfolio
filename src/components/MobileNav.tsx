@@ -86,6 +86,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ path }) => {
               className={`block py-2 px-4 text-main_gray font-semibold hover:bg-zinc-100 ${
                 path === '/contact' ? 'text-main_red' : ''
               }`}
+              onClick={() => setMenuOpen(false)}
             >
               Contact me
             </Link>
