@@ -53,7 +53,7 @@ const ContactLeftSection = () => {
 
     setSending(true);
     try {
-      const response = await fetch('https://my-portfolio-backend-puce.vercel.app/contact', {
+      const response = await fetch('https://my-portfolio-backend-production-4411.up.railway.app/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
