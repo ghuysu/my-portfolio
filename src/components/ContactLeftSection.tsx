@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const contactOptions = [
   '-Select a type of contact-',
@@ -49,24 +51,30 @@ const ContactLeftSection = () => {
 
     setValidation({ isValidEmail, isValidPhone, isSelectedTitle });
 
-    if (!isValidEmail || !isValidPhone || !isSelectedTitle) return;
+    if (!isValidEmail || !isValidPhone || !isSelectedTitle) {
+      toast.error('Please fill in all required fields correctly!');
+      return;
+    }
 
     setSending(true);
     try {
-      const response = await fetch('https://my-portfolio-backend-production-4411.up.railway.app/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+      const response = await fetch(
+        'https://my-portfolio-backend-production-4411.up.railway.app/contact',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            ...formData,
+            title: contactOptions[formData.title],
+            time: Date.now(),
+          }),
         },
-        body: JSON.stringify({
-          ...formData,
-          title: contactOptions[formData.title],
-          time: Date.now(),
-        }),
-      });
+      );
 
       if (response.ok) {
-        console.log('Email sent successfully');
+        toast.success('Message sent successfully!');
         setFormData({
           firstname: '',
           lastname: '',
@@ -76,10 +84,11 @@ const ContactLeftSection = () => {
           message: '',
         });
       } else {
-        console.error('Failed to send email');
+        toast.error('Failed to send message. Please try again.');
       }
     } catch (error) {
-      console.error('Error sending email:', error);
+      console.log(error);
+      toast.error('An error occurred while sending the message.');
     } finally {
       setSending(false);
     }
@@ -136,7 +145,7 @@ const ContactLeftSection = () => {
           <div className="flex flex-col items-end">
             <input
               type="text"
-              placeholder="Phone number(optional)"
+              placeholder="Phone number (optional)"
               className="w-full bg-gray-100 text-xs p-3 rounded-md"
               onChange={(e) => handleInputChange('phone', e.target.value)}
               value={formData.phone}
@@ -180,10 +189,17 @@ const ContactLeftSection = () => {
             type="submit"
             className="w-1/3 py-3 px-4 bg-white text-main_red text-sm font-bold rounded-lg hover:bg-main_red hover:text-white transition-colors duration-150"
           >
-            {isSending ? 'Sending' : 'Send message'}
+            {isSending ? 'Sending...' : 'Send message'}
           </button>
         </div>
       </form>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick={true}
+      />
     </div>
   );
 };

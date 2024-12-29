@@ -35,6 +35,14 @@ interface Item {
   value: string;
 }
 
+interface Project {
+  name: string;
+  description: string;
+  usedTechs: string[];
+  time: string;
+  link: Item[];
+}
+
 export interface Data {
   nickname: string;
   fullname: string;
@@ -43,7 +51,7 @@ export interface Data {
   role: string[];
   education: Certificate[];
   skills: Skill[];
-  projects: string[];
+  projects: Project[];
   statistics: Statistics;
   services: Service[];
   summary: Item[];
