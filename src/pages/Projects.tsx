@@ -14,27 +14,16 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   );
   const [showedProject, setShowedProject] = useState<Project | null>(null);
   const shadowRef = useRef<HTMLDivElement>(null);
-  const projectDetailRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!showedProject) return;
     if (showedProject) {
-      gsap.fromTo(
-        projectDetailRef.current,
-        { scale: 0.5 },
-        { scale: 1, duration: 0.5, ease: 'power2.out' },
-      );
       gsap.fromTo(
         shadowRef.current,
         { opacity: 0 },
         { opacity: 0.9, duration: 0.5, ease: 'power2.out' },
       );
     } else {
-      gsap.to(projectDetailRef.current, {
-        resize: 1,
-        duration: 0.5,
-        ease: 'power2.out',
-      });
       gsap.to(shadowRef.current, {
         opacity: 0,
         duration: 0.5,
@@ -54,12 +43,10 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
       )}
       {showedProject && (
         <div className="absolute top-0 left-0 z-10 w-full h-full flex items-center justify-center">
-          <div ref={projectDetailRef}>
             <ProjectDetail
               project={showedProject}
               setShowedProject={setShowedProject}
             />
-          </div>
         </div>
       )}
       <div className="w-1/5 mt-10 sm:mt-32">

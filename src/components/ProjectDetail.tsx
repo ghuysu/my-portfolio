@@ -65,38 +65,38 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
 }) => {
   return (
     <div>
-      <div className="w-[700px] flex flex-col gap-y-6 p-8 rounded-xl bg-gray-800 relative">
+      <div className=" w-[350px] md:w-[500px] lg:w-[700px] flex flex-col gap-y-6 p-5 rounded-xl bg-gray-800 relative">
         <img src={project.imageUrls[0]} className="object-cover mt-5" />
         <div className="">
           {project.usedTechs.map((tech, index) => (
             <div className="inline-block" key={index}>
-              <div className="gap-x-1 bg-gray-600 p-1 rounded-lg mr-1 mb-1 flex flex-col items-center">
+              <div className="gap-x-2 bg-gray-600 p-1 rounded-lg mr-2 mb-2 flex flex-col items-center">
                 <img
-                  className="rounded-md w-4"
+                  className="rounded-md w-5"
                   src={getTechStackIconUrl(tech)}
                 />
-                <p className="text-[8px] text-gray-300">{tech}</p>
+                <p className="text-[9px] text-gray-300">{tech}</p>
               </div>
             </div>
           ))}
         </div>
         <div className="flex flex-col">
-          <p className="font-semibold text-xl text-gray-200">{project.name}</p>
-          <p className="text-[11px] text-gray-400">{project.time}</p>
+          <p className="font-semibold text-2xl text-gray-200">{project.name}</p>
+          <p className="text-sm text-gray-400">{project.time}</p>
         </div>
-        <p className="text-xs text-justify font-light text-main_gray">
+        <p className="text-sm text-justify font-normal text-main_gray">
           {project.description}
         </p>
-        <div>
+        <div className='flex flex-row gap-x-4 justify-center'>
           {project.link.map((link, index) => (
             <a
               href={link.value}
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-4"
+              className=""
               key={index}
             >
-              <button className="font-semibold text-base px-6 py-2 rounded-full bg-main_red text-white hover:bg-white hover:text-main_red transition">
+              <button className="font-semibold text-xs lg:text-sm px-6 py-2 rounded-full bg-white text-main_red hover:bg-main_red hover:text-white transition duration-200">
                 {link.name}
               </button>
             </a>
