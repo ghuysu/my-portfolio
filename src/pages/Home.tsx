@@ -6,7 +6,7 @@ import RightSection from '../components/RightSection';
 const Home: React.FC<HomeProps> = ({ fullname, about, contact, role }) => {
   return (
     <div className="bg-white text-black h-[calc(100vh-theme(height.20))] w-svw">
-      <div className="lg:mx-16 xl:mx-16 md:mx-16 sm:mx-16 mx-6 flex flex-col h-full mt-5 justify-start lg:mt-0 lg:justify-center items-center">
+      <div className="lg:mx-16 xl:mx-16 md:mx-16 sm:mx-16 mx-6 flex flex-col h-full pt-5 justify-start lg:mt-0 lg:justify-center items-center">
         <div className="lg:flex-row flex-col space-y-52">
           <div className="max-w-screen-lg mx-auto flex xl:flex-row lg:flex-row md:flex-col sm:flex-col flex-col items-center xl:space-x-20 lg:space-x-20">
             {/* Left Section */}

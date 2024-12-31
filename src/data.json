@@ -117,6 +117,7 @@
   "projects": [
     {
       "name": "Social media app",
+      "type": ["Fullstack", "Backend", "Frontend"],
       "description": "This project is inspired by Locket, a popular mobile social media app. I found the idea interesting and wanted to see if I could create my own backend platform and a web version of the app. It includes most of Locket's features and adds new APIs for admins to manage the system, users, reports, and other tasks.",
       "usedTechs": [
         "NestJS",
@@ -126,13 +127,13 @@
         "AWS S3",
         "React",
         "TailwindCSS",
-        "GSAP",
         "Docker",
-        "Git/Github",
+        "Git",
+        "Github",
         "Postman"
       ],
       "time": "Sep 2024 - Nov 2024",
-      "imageUrls": [],
+      "imageUrls": ["/assets/images/social-media-backend.png"],
       "link": [
         {
           "name": "View backend code",
@@ -150,10 +151,115 @@
     },
     {
       "name": "Family Guy Player",
+      "type": ["Frontend"],
       "description": "One day, my favorite cartoon website went down, and I couldn’t find any site streaming the Family Guy series. After a brief moment of frustration, I thought to myself, 'Why not build my own website?' And so, this website came to life after just four hours of development.",
       "usedTechs": ["HTML", "CSS"],
       "time": "Jul 2024",
-      "imageUrls": [],
+      "imageUrls": ["/assets/images/family-guy-web.png"],
+      "link": [
+        {
+          "name": "View code",
+          "value": "https://github.com/ghuysu/FamilyGuy-player"
+        },
+        {
+          "name": "View frontend code",
+          "value": "https://family-guy-player.vercel.app/"
+        }
+      ]
+    },
+    {
+      "name": "Social media app",
+      "type": ["Fullstack"],
+      "description": "This project is inspired by Locket, a popular mobile social media app. I found the idea interesting and wanted to see if I could create my own backend platform and a web version of the app. It includes most of Locket's features and adds new APIs for admins to manage the system, users, reports, and other tasks.",
+      "usedTechs": [
+        "NestJS",
+        "Microservices",
+        "MongoDB",
+        "Redis",
+        "AWS S3",
+        "React",
+        "TailwindCSS",
+        "Docker",
+        "Git",
+        "Github",
+        "Postman"
+      ],
+      "time": "Sep 2024 - Nov 2024",
+      "imageUrls": ["/assets/images/social-media-backend.png"],
+      "link": [
+        {
+          "name": "View backend code",
+          "value": "https://github.com/ghuysu/social-media"
+        },
+        {
+          "name": "View frontend code",
+          "value": "https://github.com/ghuysu/social-media"
+        },
+        {
+          "name": "View web app",
+          "value": "https://github.com/ghuysu/social-media"
+        }
+      ]
+    },
+    {
+      "name": "Family Guy Player",
+      "type": ["Frontend"],
+      "description": "One day, my favorite cartoon website went down, and I couldn’t find any site streaming the Family Guy series. After a brief moment of frustration, I thought to myself, 'Why not build my own website?' And so, this website came to life after just four hours of development.",
+      "usedTechs": ["HTML", "CSS"],
+      "time": "Jul 2024",
+      "imageUrls": ["/assets/images/family-guy-web.png"],
+      "link": [
+        {
+          "name": "View code",
+          "value": "https://github.com/ghuysu/FamilyGuy-player"
+        },
+        {
+          "name": "View frontend code",
+          "value": "https://family-guy-player.vercel.app/"
+        }
+      ]
+    },
+    {
+      "name": "Social media app",
+      "type": ["Backend"],
+      "description": "This project is inspired by Locket, a popular mobile social media app. I found the idea interesting and wanted to see if I could create my own backend platform and a web version of the app. It includes most of Locket's features and adds new APIs for admins to manage the system, users, reports, and other tasks.",
+      "usedTechs": [
+        "NestJS",
+        "Microservices",
+        "MongoDB",
+        "Redis",
+        "AWS S3",
+        "React",
+        "TailwindCSS",
+        "Docker",
+        "Git",
+        "Github",
+        "Postman"
+      ],
+      "time": "Sep 2024 - Nov 2024",
+      "imageUrls": ["/assets/images/social-media-backend.png"],
+      "link": [
+        {
+          "name": "View backend code",
+          "value": "https://github.com/ghuysu/social-media"
+        },
+        {
+          "name": "View frontend code",
+          "value": "https://github.com/ghuysu/social-media"
+        },
+        {
+          "name": "View web app",
+          "value": "https://github.com/ghuysu/social-media"
+        }
+      ]
+    },
+    {
+      "name": "Family Guy Player",
+      "type": ["Frontend"],
+      "description": "One day, my favorite cartoon website went down, and I couldn’t find any site streaming the Family Guy series. After a brief moment of frustration, I thought to myself, 'Why not build my own website?' And so, this website came to life after just four hours of development.",
+      "usedTechs": ["HTML", "CSS"],
+      "time": "Jul 2024",
+      "imageUrls": ["/assets/images/family-guy-web.png"],
       "link": [
         {
           "name": "View code",

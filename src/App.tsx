@@ -42,7 +42,7 @@ function App() {
     <Router>
       <div>
         <AnimationBars path={path} loading={loading} setLoading={setLoading} />
-        <div className={`relative ${loading && 'hidden'} overflow-y-auto`}>
+        <div className={`relative ${loading && 'hidden'}`}>
           <div ref={headerRef}>
             <Header nickname={data?.nickname} path={path} setPath={setPath} />
           </div>
@@ -73,7 +73,10 @@ function App() {
                   />
                 }
               />
-              <Route path="/projects" element={<Projects />} />
+              <Route
+                path="/projects"
+                element={<Projects projects={data.projects} />}
+              />
               <Route
                 path="/contact"
                 element={

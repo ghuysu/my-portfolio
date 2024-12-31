@@ -11,7 +11,7 @@ const About: React.FC<AboutProps> = ({ summary, education, skills }) => {
       <div className="w-1/4 mt-32">
         <AboutLeftSection path={path} setPath={setPath} />
       </div>
-      <div className="w-3/4 ml-5 md:ml-20 mt-32">
+      <div className="w-3/4 ml-5 md:ml-20 mt-32 overflow-y-scroll">
         <AboutRightSection
           summary={summary}
           path={path}
