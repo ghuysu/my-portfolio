@@ -35,7 +35,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   return (
     <div className="bg-white flex flex-row text-black h-[calc(100vh-theme(height.20))] mx-6 sm:mx-16 xl:mx-60">
       {showedProject && (
-        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+        <div className="absolute top-0 left-0 w-svw h-svh flex items-center justify-center">
           <ProjectDetail
             project={showedProject}
             setShowedProject={setShowedProject}

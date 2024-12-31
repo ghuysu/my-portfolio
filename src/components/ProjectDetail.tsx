@@ -87,18 +87,16 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
         <p className="text-sm text-justify font-normal text-main_gray">
           {project.description}
         </p>
-        <div className="grid grid-cols-3 gap-x-4 justify-center">
+        <div className={`grid grid-cols-${project.link.length} gap-x-4 justify-center`}>
           {project.link.map((link, index) => (
             <a
               href={link.value}
               target="_blank"
               rel="noopener noreferrer"
-              className=""
+              className="font-semibold text-center text-[10px] sm:text-xs lg:text-sm px-2 sm:px-6 py-2 rounded-full bg-white text-main_red hover:bg-main_red hover:text-white transition duration-200"
               key={index}
             >
-              <button className="font-semibold text-[10px] sm:text-xs lg:text-sm px-2 sm:px-6 py-2 rounded-full bg-white text-main_red hover:bg-main_red hover:text-white transition duration-200">
                 {link.name}
-              </button>
             </a>
           ))}
         </div>
