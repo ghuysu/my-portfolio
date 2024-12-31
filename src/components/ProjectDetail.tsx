@@ -65,17 +65,17 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
 }) => {
   return (
     <div>
-      <div className=" w-[350px] md:w-[500px] lg:w-[700px] flex flex-col gap-y-6 p-5 rounded-xl bg-gray-800 relative">
+      <div className=" w-[350px] md:w-[500px] lg:w-[700px] flex flex-col gap-y-3 sm:gap-y-6 p-5 rounded-xl bg-gray-800 relative z-20">
         <img src={project.imageUrls[0]} className="object-cover mt-5" />
         <div className="">
           {project.usedTechs.map((tech, index) => (
             <div className="inline-block" key={index}>
               <div className="gap-x-2 bg-gray-600 p-1 rounded-lg mr-2 mb-2 flex flex-col items-center">
                 <img
-                  className="rounded-md w-5"
+                  className="rounded-md w-4 sm:w-5"
                   src={getTechStackIconUrl(tech)}
                 />
-                <p className="text-[9px] text-gray-300">{tech}</p>
+                <p className="text-[8px] sm:text-[9px] text-gray-300">{tech}</p>
               </div>
             </div>
           ))}
@@ -87,7 +87,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
         <p className="text-sm text-justify font-normal text-main_gray">
           {project.description}
         </p>
-        <div className='flex flex-row gap-x-4 justify-center'>
+        <div className="grid grid-cols-3 gap-x-4 justify-center">
           {project.link.map((link, index) => (
             <a
               href={link.value}
@@ -96,7 +96,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
               className=""
               key={index}
             >
-              <button className="font-semibold text-xs lg:text-sm px-6 py-2 rounded-full bg-white text-main_red hover:bg-main_red hover:text-white transition duration-200">
+              <button className="font-semibold text-[10px] sm:text-xs lg:text-sm px-2 sm:px-6 py-2 rounded-full bg-white text-main_red hover:bg-main_red hover:text-white transition duration-200">
                 {link.name}
               </button>
             </a>

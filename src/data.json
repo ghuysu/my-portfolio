@@ -136,11 +136,11 @@
       "imageUrls": ["/assets/images/social-media-backend.png"],
       "link": [
         {
-          "name": "View backend code",
+          "name": "View backend",
           "value": "https://github.com/ghuysu/social-media"
         },
         {
-          "name": "View frontend code",
+          "name": "View frontend",
           "value": "https://github.com/ghuysu/social-media"
         },
         {

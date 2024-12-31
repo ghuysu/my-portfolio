@@ -35,18 +35,16 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   return (
     <div className="bg-white flex flex-row text-black h-[calc(100vh-theme(height.20))] mx-6 sm:mx-16 xl:mx-60">
       {showedProject && (
-        <div
-          ref={shadowRef}
-          className="absolute top-0 left-0 z-10 w-full h-full bg-zinc-900 opacity-90"
-          onClick={() => setShowedProject(null)}
-        ></div>
-      )}
-      {showedProject && (
-        <div className="absolute top-0 left-0 z-10 w-full h-full flex items-center justify-center">
-            <ProjectDetail
-              project={showedProject}
-              setShowedProject={setShowedProject}
-            />
+        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+          <ProjectDetail
+            project={showedProject}
+            setShowedProject={setShowedProject}
+          />
+          <div
+            ref={shadowRef}
+            className="absolute top-0 left-0 z-10 w-full h-full bg-zinc-900 opacity-90"
+            onClick={() => setShowedProject(null)}
+          ></div>
         </div>
       )}
       <div className="w-1/5 mt-10 sm:mt-32">
