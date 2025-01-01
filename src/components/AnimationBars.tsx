@@ -36,11 +36,11 @@ const AnimationBars: React.FC<AnimationBarsProps> = ({
         index * 0.05,
       );
     });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
-    animationFunc()
+    animationFunc();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [path]);
 

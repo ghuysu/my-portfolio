@@ -67,8 +67,8 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
   return (
     <div>
       <div className=" w-[350px] md:w-[500px] lg:w-[700px] flex flex-col gap-y-3 sm:gap-y-6 p-5 rounded-xl bg-gray-800 relative z-20">
-        <div className='object-cover mt-5'>
-          <ImageSlider imageUrls={project.imageUrls}/>
+        <div className="object-cover mt-5">
+          <ImageSlider imageUrls={project.imageUrls} />
         </div>
         <div className="">
           {project.usedTechs.map((tech, index) => (
@@ -90,7 +90,9 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
         <p className="text-sm text-justify font-normal text-main_gray">
           {project.description}
         </p>
-        <div className={`grid grid-cols-${project.link.length} gap-x-4 justify-center`}>
+        <div
+          className={`grid grid-cols-${project.link.length} gap-x-4 justify-center`}
+        >
           {project.link.map((link, index) => (
             <a
               href={link.value}
@@ -99,7 +101,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
               className="font-semibold text-center text-[10px] sm:text-xs lg:text-sm px-2 sm:px-6 py-2 rounded-full bg-white text-main_red hover:bg-main_red hover:text-white transition duration-200"
               key={index}
             >
-                {link.name}
+              {link.name}
             </a>
           ))}
         </div>

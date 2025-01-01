@@ -10,6 +10,7 @@ import Services from './pages/Services';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import gsap from 'gsap';
+import NotFound from './pages/NotFound';
 
 function App() {
   const data: Data = jsonData;
@@ -87,6 +88,7 @@ function App() {
                   />
                 }
               />
+              <Route path="/*" element={<NotFound />} />
             </Routes>
           </div>
         </div>
