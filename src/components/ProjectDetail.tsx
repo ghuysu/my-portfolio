@@ -1,4 +1,5 @@
 import { ProjectDetailProps } from '../interface';
+import ImageSlider from './ImageSlider';
 
 const getTechStackIconUrl = (name: string): string => {
   switch (name) {
@@ -66,7 +67,9 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
   return (
     <div>
       <div className=" w-[350px] md:w-[500px] lg:w-[700px] flex flex-col gap-y-3 sm:gap-y-6 p-5 rounded-xl bg-gray-800 relative z-20">
-        <img src={project.imageUrls[0]} className="object-cover mt-5" />
+        <div className='object-cover mt-5'>
+          <ImageSlider imageUrls={project.imageUrls}/>
+        </div>
         <div className="">
           {project.usedTechs.map((tech, index) => (
             <div className="inline-block" key={index}>

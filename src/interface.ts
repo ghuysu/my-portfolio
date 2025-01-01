@@ -148,3 +148,7 @@ export interface ProjectDetailProps {
   project: Project;
   setShowedProject: React.Dispatch<React.SetStateAction<Project | null>>;
 }
+
+export interface ImageSliderProps {
+  imageUrls: string[];
+}

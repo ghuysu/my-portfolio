@@ -65,3 +65,12 @@ body {
   color: black;
   cursor: pointer;
 }
+
+.swiper-pagination-bullet {
+  background: #7d7b7b;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: red;
+}

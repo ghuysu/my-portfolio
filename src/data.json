@@ -133,7 +133,10 @@
         "Postman"
       ],
       "time": "Sep 2024 - Nov 2024",
-      "imageUrls": ["/assets/images/social-media-backend.png"],
+      "imageUrls": [
+        "/assets/images/social-media-backend.png",
+        "/assets/images/family-guy-web.png"
+      ],
       "link": [
         {
           "name": "View backend",
