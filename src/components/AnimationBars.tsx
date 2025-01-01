@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 import { AnimationBarsProps } from '../interface';
 import gsap from 'gsap';
 
@@ -14,7 +14,7 @@ const AnimationBars: React.FC<AnimationBarsProps> = ({
   const fourthBar = useRef<HTMLDivElement>(null);
   const fifthBar = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  const animationFunc = useCallback(() => {
     setLoading(true);
     const bars = [
       firstBar.current,
@@ -36,6 +36,11 @@ const AnimationBars: React.FC<AnimationBarsProps> = ({
         index * 0.05,
       );
     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  useEffect(() => {
+    animationFunc()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [path]);
 

@@ -13,6 +13,7 @@ const RightSection: React.FC<RightSectionProps> = ({
   const roleIndex = useRef(0);
 
   useEffect(() => {
+    if ( !roleRef.current) return;
     const interval = setInterval(() => {
       gsap.to(roleRef.current, {
         opacity: 0,
