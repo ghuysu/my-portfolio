@@ -133,10 +133,7 @@
         "Postman"
       ],
       "time": "Sep 2024 - Nov 2024",
-      "imageUrls": [
-        "/assets/images/social-media-backend.png",
-        "/assets/images/family-guy-web.png"
-      ],
+      "imageUrls": ["/assets/images/social-media-backend.png"],
       "link": [
         {
           "name": "View backend",
@@ -153,7 +150,7 @@
       ]
     },
     {
-      "name": "Family Guy Player",
+      "name": "Family Guy player",
       "type": ["Frontend"],
       "description": "One day, my favorite cartoon website went down, and I couldn’t find any site streaming the Family Guy series. After a brief moment of frustration, I thought to myself, 'Why not build my own website?' And so, this website came to life after just four hours of development.",
       "usedTechs": ["HTML", "CSS"],
@@ -167,6 +164,69 @@
         {
           "name": "View website",
           "value": "https://family-guy-player.vercel.app/"
+        }
+      ]
+    },
+    {
+      "name": "Music player",
+      "type": ["Frontend"],
+      "description": "Music player is a practice project I built while learning JavaScript, HTML, and CSS. This simple yet functional project helped me and others to practice and gain a deeper understanding of how JavaScript works in creating interactive web applications.",
+      "usedTechs": ["HTML", "CSS", "Javascript"],
+      "time": "Feb 2023",
+      "imageUrls": [
+        "/assets/images/music-player-web.png",
+        "/assets/images/music-player-code.png"
+      ],
+      "link": [
+        {
+          "name": "View code",
+          "value": "https://github.com/ghuysu/music-player"
+        },
+        {
+          "name": "View website",
+          "value": "https://music-player-peach-six-36.vercel.app/"
+        }
+      ]
+    },
+    {
+      "name": "Basic caculator",
+      "type": ["Frontend"],
+      "description": "Music player is just a super super basic project with HTML, CSS for UI and Javascript for implementing basic arithmetic operations. This was one of my first projects while learning JavaScript, showcasing fundamental web development skills.",
+      "usedTechs": ["HTML", "CSS", "Javascript"],
+      "time": "Feb 2023",
+      "imageUrls": [
+        "/assets/images/caculator-web.png",
+        "/assets/images/caculator-code.png"
+      ],
+      "link": [
+        {
+          "name": "View code",
+          "value": "https://github.com/ghuysu/calculator"
+        },
+        {
+          "name": "View website",
+          "value": "https://calculator-dusky-omega.vercel.app/"
+        }
+      ]
+    },
+    {
+      "name": "Snake hunting game",
+      "type": ["Frontend"],
+      "description": "This is a funny game i built when learning Typescript. It is insprired by a old game in Nokia 3310 called Snake hunting game. I added one more funny and super hard level - Asian level, you want to turn left, snake will turn right, you want to go up, snake will go down :)). Basically, this level will reverse your choosen directions. Have fun with it!",
+      "usedTechs": ["HTML", "CSS", "Typescript"],
+      "time": "Jun 2023",
+      "imageUrls": [
+        "/assets/images/snake-game-web.png",
+        "/assets/images/snake-game-code.png"
+      ],
+      "link": [
+        {
+          "name": "View code",
+          "value": "https://github.com/ghuysu/snake-game-with-typescript"
+        },
+        {
+          "name": "View website",
+          "value": "https://snake-game-with-typescript.vercel.app/"
         }
       ]
     }

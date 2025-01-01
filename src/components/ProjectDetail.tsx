@@ -73,7 +73,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({
         <div className="">
           {project.usedTechs.map((tech, index) => (
             <div className="inline-block" key={index}>
-              <div className="gap-x-2 bg-gray-600 p-1 rounded-lg mr-2 mb-2 flex flex-col items-center">
+              <div className="gap-x-2 bg-gray-600 p-1 rounded-md mr-2 mb-2 flex flex-col items-center">
                 <img
                   className="rounded-md w-4 sm:w-5"
                   src={getTechStackIconUrl(tech)}

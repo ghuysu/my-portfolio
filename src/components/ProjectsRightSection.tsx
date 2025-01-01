@@ -97,7 +97,7 @@ const ProjectsRightSection: React.FC<ProjectsRightSectionProps> = ({
           <div className="">
             {project.usedTechs.map((tech, index) => (
               <div className="inline-block" key={index}>
-                <div className="gap-x-1 bg-gray-600 p-1 rounded-lg mr-1 mb-1 flex flex-col items-center">
+                <div className="gap-x-1 bg-gray-600 p-1 rounded-md mr-1 mb-1 flex flex-col items-center">
                   <img
                     className="rounded-md w-4"
                     src={getTechStackIconUrl(tech)}
