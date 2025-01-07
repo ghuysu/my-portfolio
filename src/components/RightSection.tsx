@@ -60,12 +60,15 @@ const RightSection: React.FC<RightSectionProps> = ({
         <div className="flex flex-row gap-4 text-3xl">
           <a
             href={contact.github}
+            target='_blank'
             className="hover:text-main_red transition text-3xl"
           >
             <i className="fab fa-github"></i>
           </a>
           <a
             href={contact.linkedIn}
+            target='_blank'
+            rel="noopener noreferrer"
             className="hover:text-main_red transition text-3xl"
           >
             <i className="fab fa-linkedin"></i>
