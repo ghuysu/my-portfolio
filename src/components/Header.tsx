@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({ nickname, path, setPath }) => {
     <div className="relative">
       <header className="flex justify-between items-center lg:px-16 md:px-6 px-6 py-4 relative bg-gradient-to-b from-zinc-100 to-zinc-50">
         <div>
-          <p className="text-3xl font-bold text-main_red">
+          <p className="text-3xl font-bold text-main_red cursor-pointer" onClick={() => setPath('/')}>
             {nickname}
             <span className="text-white">.</span>
           </p>
