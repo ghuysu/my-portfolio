@@ -9,7 +9,7 @@
     "linkedIn": "https://www.linkedin.com/in/ghuysu/",
     "facebook": "https://www.facebook.com/ghuy.1011/",
     "cv": "https://drive.google.com/file/d/1ufTcJrD06-IqtHyJIUhxU2r_AscGTgbX/view?usp=sharing",
-    "phone": "(+84) 386 658 351"
+    "phone": "(+84) 387 658 351"
   },
   "summary": [
     { "name": "Name", "value": "Dao Phuoc Gia Huy" },
@@ -134,15 +134,7 @@
       "imageUrls": ["/assets/images/social-media-backend.png"],
       "link": [
         {
-          "name": "View backend",
-          "value": "https://github.com/ghuysu/social-media"
-        },
-        {
-          "name": "View frontend",
-          "value": "https://github.com/ghuysu/social-media"
-        },
-        {
-          "name": "View web app",
+          "name": "View backend code",
           "value": "https://github.com/ghuysu/social-media"
         }
       ]
