@@ -117,16 +117,14 @@
   "projects": [
     {
       "name": "Social media app",
-      "type": ["Fullstack", "Backend", "Frontend"],
-      "description": "This project is inspired by Locket, a popular mobile social media app. I found the idea interesting and wanted to see if I could create my own backend platform and a web version of the app. It includes most of Locket's features and adds new APIs for admins to manage the system, users, reports, and other tasks.",
+      "type": ["Backend"],
+      "description": "This project is inspired by Locket, a popular mobile social media app. I found the idea interesting and wanted to see if I could create my own backend platform. It includes most of Locket's features and adds new APIs for admins to manage the system, users, reports, and other tasks.",
       "usedTechs": [
         "NestJS",
         "Microservices",
         "MongoDB",
         "Redis",
         "AWS S3",
-        "React",
-        "TailwindCSS",
         "Docker",
         "Git",
         "Github",
@@ -150,10 +148,79 @@
       ]
     },
     {
+      "name": "Locket web version",
+      "type": ["Fullstack", "Frontend", "Backend"],
+      "description": "After using Locket for quite some time, I started wondering—what if my phone runs out of battery, or I only have my laptop with me? How could I still enjoy Locket? That’s when the idea of creating a web version of Locket popped into my mind. Over the course of two months, I dedicated myself to bringing this idea to life. The Locket web version captures the essence of the mobile app (as of June 2024) and brings it seamlessly to your browser. It includes almost all the features you know and love, along with some exciting improvements. Give it a try and experience Locket in a whole new way!",
+      "usedTechs": [
+        "Node.js",
+        "Express.js",
+        "Javascript",
+        "MongoDB",
+        "AWS S3",
+        "React",
+        "TailwindCSS",
+        "Git",
+        "Github",
+        "Postman"
+      ],
+      "time": "Jun 2024 - Aug 2024",
+      "imageUrls": [
+        "/assets/images/locket-1.png",
+        "/assets/images/locket-2.png",
+        "/assets/images/locket-3.png",
+        "/assets/images/locket-4.png",
+        "/assets/images/locket-5.png",
+        "/assets/images/locket-backend.png",
+        "/assets/images/locket-frontend.png"
+      ],
+      "link": [
+        {
+          "name": "View backend",
+          "value": "https://github.com/ghuysu/locket-clone"
+        },
+        {
+          "name": "View frontend",
+          "value": "https://github.com/ghuysu/locket-clone-frontend"
+        },
+        {
+          "name": "View webapp",
+          "value": "https://locket-clone-frontend.vercel.app"
+        }
+      ]
+    },
+    {
+      "name": "E-commerce APIs",
+      "type": ["Backend"],
+      "description": "The primary objective of this E-Commerce project is to develop a robust and scalable online platform that enables businesses and individuals to seamlessly sell and purchase products or services over the internet. The platform aims to provide a user-friendly and secure environment for both buyers and sellers, facilitating efficient transactions and fostering a thriving e-commerce community.",
+      "usedTechs": [
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Git",
+        "Github",
+        "Postman"
+      ],
+      "time": "Mar 2024 - Apr 2024",
+      "imageUrls": [
+        "/assets/images/e-commerce-v1.png",
+        "/assets/images/e-commerce-v2.png"
+      ],
+      "link": [
+        {
+          "name": "View version 1",
+          "value": "https://github.com/ghuysu/e-commerce-v1"
+        },
+        {
+          "name": "View version 2",
+          "value": "https://github.com/ghuysu/e-commerce-v2"
+        }
+      ]
+    },
+    {
       "name": "Family Guy player",
       "type": ["Frontend"],
       "description": "One day, my favorite cartoon website went down, and I couldn’t find any site streaming the Family Guy series. After a brief moment of frustration, I thought to myself, 'Why not build my own website?' And so, this website came to life after just four hours of development.",
-      "usedTechs": ["HTML", "CSS"],
+      "usedTechs": ["HTML", "CSS", "Git", "Github"],
       "time": "Jul 2024",
       "imageUrls": ["/assets/images/family-guy-web.png"],
       "link": [
@@ -171,7 +238,7 @@
       "name": "Music player",
       "type": ["Frontend"],
       "description": "Music player is a practice project I built while learning JavaScript, HTML, and CSS. This simple yet functional project helped me and others to practice and gain a deeper understanding of how JavaScript works in creating interactive web applications.",
-      "usedTechs": ["HTML", "CSS", "Javascript"],
+      "usedTechs": ["HTML", "CSS", "Javascript", "Git", "Github"],
       "time": "Feb 2023",
       "imageUrls": [
         "/assets/images/music-player-web.png",
@@ -192,7 +259,7 @@
       "name": "Basic caculator",
       "type": ["Frontend"],
       "description": "Music player is just a super super basic project with HTML, CSS for UI and Javascript for implementing basic arithmetic operations. This was one of my first projects while learning JavaScript, showcasing fundamental web development skills.",
-      "usedTechs": ["HTML", "CSS", "Javascript"],
+      "usedTechs": ["HTML", "CSS", "Javascript", "Git", "Github"],
       "time": "Feb 2023",
       "imageUrls": [
         "/assets/images/caculator-web.png",
@@ -211,7 +278,7 @@
     },
     {
       "name": "Snake hunting game",
-      "type": ["Frontend"],
+      "type": ["Frontend", "Git", "Github"],
       "description": "This is a funny game i built when learning Typescript. It is insprired by a old game in Nokia 3310 called Snake hunting game. I added one more funny and super hard level - Asian level, you want to turn left, snake will turn right, you want to go up, snake will go down :)). Basically, this level will reverse your choosen directions. Have fun with it!",
       "usedTechs": ["HTML", "CSS", "Typescript"],
       "time": "Jun 2023",
@@ -227,6 +294,84 @@
         {
           "name": "View website",
           "value": "https://snake-game-with-typescript.vercel.app/"
+        }
+      ]
+    },
+    {
+      "name": "Discord weather bot",
+      "type": ["Backend"],
+      "description": "A simple weather bot on Discord using Node.js and discord.js. By joining my server channel, you can ask the bot about your city's weather today with a very simple syntax!",
+      "usedTechs": ["Node.js", "Javascript", "Git", "Github"],
+      "time": "Jun 2024",
+      "imageUrls": [
+        "/assets/images/weather-bot-discord.png",
+        "/assets/images/weather-bot-code.png"
+      ],
+      "link": [
+        {
+          "name": "View code",
+          "value": "https://github.com/ghuysu/discord-weather-bot"
+        },
+        {
+          "name": "Join my channel",
+          "value": "https://discord.gg/JgT9NnU4"
+        }
+      ]
+    },
+    {
+      "name": "Personal portfolio",
+      "type": ["Fullstack", "Backend", "Frontend"],
+      "description": "Did you get confused? Yes, you're right. This project is already the web that you are currently watching. Enjoy it and feel free to contact me!",
+      "usedTechs": [
+        "Node.js",
+        "Express.js",
+        "Javascript",
+        "React",
+        "TailwindCSS",
+        "Typescript",
+        "Git",
+        "Github"
+      ],
+      "time": "Jan 2025",
+      "imageUrls": [
+        "/assets/images/portfolio-web.png",
+        "/assets/images/portfolio-code.png"
+      ],
+      "link": [
+        {
+          "name": "View code",
+          "value": "https://github.com/ghuysu/discord-weather-bot"
+        }
+      ]
+    },
+    {
+      "name": "Network tool",
+      "type": ["Fullstack"],
+      "description": "A basic and very simple network tool using Java and some related packages which was built when i first leant about computer network. It works on Windows and limit some features for MacOs. It includes some fuctions such as Ping, Traceroute, DNS query, Scan IP.",
+      "usedTechs": ["Java", "Git", "Github"],
+      "time": "Nov 2023",
+      "imageUrls": [
+        "/assets/images/network-tool-ui.png",
+        "/assets/images/network-tool-code.png"
+      ],
+      "link": [
+        {
+          "name": "View code",
+          "value": "https://github.com/ghuysu/network-tool-with-java"
+        }
+      ]
+    },
+    {
+      "name": "Docx to PDF converter",
+      "type": ["Fullstack"],
+      "description": "A pure Java and JSP project build to help me know about how MCV architecture and Java work together. It allows you to create your own account, convert Docx files to PDF files and save them into database helping you review and download it later.",
+      "usedTechs": ["Java", "MySQL", "Git", "Github"],
+      "time": "Dec 2023",
+      "imageUrls": ["/assets/images/converter-code.png"],
+      "link": [
+        {
+          "name": "View code",
+          "value": "https://github.com/ghuysu/docx-to-pdf-converter"
         }
       ]
     }
