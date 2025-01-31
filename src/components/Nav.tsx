@@ -1,19 +1,19 @@
 import { Link } from 'react-router-dom';
 import { links } from '../links';
+import { useContext } from 'react';
+import { PathContext } from '../stores/path-context';
 
-interface NavProps {
-  path: string;
-}
+const Nav = () => {
+  const { path } = useContext(PathContext);
 
-const Nav: React.FC<NavProps> = ({ path }) => {
   return (
     <nav className="flex lg:space-x-8 md:space-x-4 mt-1">
       {links.map((link, index) => (
         <Link
-          to={link.path}
+          to={link.path[0]}
           key={index}
           className={`text-black font-medium py-2 border-t-0 border-l-0 border-r-0 border-b-4 hover:text-main_red ${
-            path === link.path && 'border-main_red border-solid'
+            link.path.includes(path) && 'border-main_red border-solid'
           }`}
         >
           {link.name}

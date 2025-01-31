@@ -1,19 +1,16 @@
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { links } from '../links';
+import { PathContext } from '../stores/path-context';
 
-interface MobileNavProps {
-  path: string;
-}
-
-const MobileNav: React.FC<MobileNavProps> = ({ path }) => {
+const MobileNav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const shadowRef = useRef<HTMLDivElement>(null);
-
+  const { path } = useContext(PathContext);
   useEffect(() => {
     if (!menuRef.current) return;
     if (menuOpen) {
@@ -71,9 +68,9 @@ const MobileNav: React.FC<MobileNavProps> = ({ path }) => {
             {links.map((link, index) => (
               <li key={index}>
                 <Link
-                  to={link.path}
+                  to={link.path[0]}
                   className={`block py-2 px-4 text-main_gray font-semibold hover:bg-zinc-100 ${
-                    path === link.path ? 'text-main_red' : ''
+                    link.path.includes(path) ? 'text-main_red' : ''
                   }`}
                   onClick={() => setMenuOpen(false)}
                 >

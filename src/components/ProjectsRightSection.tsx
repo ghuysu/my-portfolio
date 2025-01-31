@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Project, ProjectsRightSectionProps } from '../interface';
+import { PathContext } from '../stores/path-context';
 
 const getTechStackIconUrl = (name: string): string => {
   switch (name) {
@@ -61,20 +62,29 @@ const getTechStackIconUrl = (name: string): string => {
 };
 
 const ProjectsRightSection: React.FC<ProjectsRightSectionProps> = ({
-  path,
   typeOfProjects,
   projects,
   setNumberOfProjects,
   setShowedProject,
 }) => {
-  const [filteredProjects, setFilteredProjects] = useState<Project[]>(projects);
+  function getNameFromPath(path: string) {
+    let name = '';
+    typeOfProjects.forEach(type => {
+      if(type.value === path){
+        name = type.name
+      }
+    })
+    return name;
+  }
 
+  const [filteredProjects, setFilteredProjects] = useState<Project[]>(projects);
+  const { path } = useContext(PathContext);
   useEffect(() => {
-    if (path === typeOfProjects[0]) {
+    if (path === typeOfProjects[0].value) {
       setFilteredProjects(projects);
     } else {
       setFilteredProjects(
-        projects.filter((project) => project.type.includes(path)),
+        projects.filter((project) => project.type.includes(getNameFromPath(path))),
       );
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

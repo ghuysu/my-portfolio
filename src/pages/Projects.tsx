@@ -1,14 +1,20 @@
-import { useEffect, useRef, useState } from 'react';
-import { Project, ProjectsProps } from '../interface';
+import { useContext, useEffect, useRef, useState } from 'react';
+import { Project } from '../interface';
 import ProjectsLeftSection from '../components/ProjectsLeftSection';
 import ProjectsRightSection from '../components/ProjectsRightSection';
 import ProjectDetail from '../components/ProjectDetail';
 import gsap from 'gsap';
+import { DataContext } from '../stores/data-context';
 
-const typeOfProjects = ['All', 'Backend', 'Frontend', 'Fullstack'];
+const typeOfProjects = [
+  { name: 'All', value: '/projects' },
+  { name: 'Fullstack', value: '/projects/fullstack' },
+  { name: 'Frontend', value: '/projects/frontend' },
+  { name: 'Backend', value: '/projects/backend' },
+];
 
-const Projects: React.FC<ProjectsProps> = ({ projects }) => {
-  const [path, setPath] = useState<string>(typeOfProjects[0]);
+const Projects = () => {
+  const { projects } = useContext(DataContext);
   const [numberOfProjects, setNumberOfProjects] = useState<number>(
     projects.length,
   );
@@ -51,14 +57,11 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
         <ProjectsLeftSection
           numberOfProjects={numberOfProjects}
           typeOfProjects={typeOfProjects}
-          path={path}
-          setPath={setPath}
         />
       </div>
       <div className="w-4/5 ml-10 sm:ml-20 mt-10 sm:mt-32 mb-5 overflow-y-scroll">
         <ProjectsRightSection
           typeOfProjects={typeOfProjects}
-          path={path}
           projects={projects}
           setNumberOfProjects={setNumberOfProjects}
           setShowedProject={setShowedProject}

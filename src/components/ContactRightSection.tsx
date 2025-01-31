@@ -1,10 +1,8 @@
-import { ContactRightSectionProps } from '../interface';
+import { useContext } from 'react';
+import { DataContext } from '../stores/data-context';
 
-const ContactRightSection: React.FC<ContactRightSectionProps> = ({
-  phone,
-  email,
-  address,
-}) => {
+const ContactRightSection = () => {
+  const { contact } = useContext(DataContext);
   return (
     <div className="flex flex-col gap-y-7">
       <div className="flex flex-row gap-x-3">
@@ -13,7 +11,7 @@ const ContactRightSection: React.FC<ContactRightSectionProps> = ({
         </div>
         <div className="flex flex-col">
           <p className="text-[10px] text-gray-600 font-medium">Phone</p>
-          <p className="text-sm text-zinc-700 font-semibold">{phone}</p>
+          <p className="text-sm text-zinc-700 font-semibold">{contact.phone}</p>
         </div>
       </div>
       <div className="flex flex-row gap-x-3">
@@ -22,7 +20,7 @@ const ContactRightSection: React.FC<ContactRightSectionProps> = ({
         </div>
         <div className="flex flex-col">
           <p className="text-[10px] text-gray-600 font-medium">Email</p>
-          <p className="text-sm text-zinc-700 font-semibold">{email}</p>
+          <p className="text-sm text-zinc-700 font-semibold">{contact.email}</p>
         </div>
       </div>
       <div className="flex flex-row gap-x-3">
@@ -31,7 +29,9 @@ const ContactRightSection: React.FC<ContactRightSectionProps> = ({
         </div>
         <div className="flex flex-col">
           <p className="text-[10px] text-gray-600 font-medium">Address</p>
-          <p className="text-sm text-zinc-700 font-semibold">{address}</p>
+          <p className="text-sm text-zinc-700 font-semibold">
+            {contact.address}
+          </p>
         </div>
       </div>
     </div>

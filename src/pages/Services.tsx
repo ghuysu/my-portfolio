@@ -1,6 +1,8 @@
-import { ServicesProps } from '../interface';
+import { useContext } from 'react';
+import { DataContext } from '../stores/data-context';
 
-const Services: React.FC<ServicesProps> = ({ services }) => {
+const Services = () => {
+  const { services } = useContext(DataContext);
   return (
     <div className="bg-white text-black h-[calc(100vh-theme(height.20))] mx-6 sm:mx-16 md:mx-30 xl:mx-60 grid grid-cols-1 place-content-start md:place-content-center">
       <div className="grid grid-cols-1 mt-5 md:mt-0 md:grid-cols-2 gap-12 md:gap-24 lg:gap-32">

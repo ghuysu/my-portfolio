@@ -1,18 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Nav from './Nav';
 import MobileNav from './MobileNav';
 import { useLocation } from 'react-router-dom';
+import { PathContext } from '../stores/path-context';
+import { DataContext } from '../stores/data-context';
 
-interface HeaderProps {
-  nickname: string;
-  path: string;
-  setPath: React.Dispatch<React.SetStateAction<string>>;
-}
-
-const Header: React.FC<HeaderProps> = ({ nickname, path, setPath }) => {
+const Header = () => {
   const location = useLocation();
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-
+  const { setPath } = useContext(PathContext);
+  const { nickname } = useContext(DataContext);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => setPath(location.pathname), [location]);
 
@@ -29,12 +26,15 @@ const Header: React.FC<HeaderProps> = ({ nickname, path, setPath }) => {
     <div className="relative">
       <header className="flex justify-between items-center lg:px-16 md:px-6 px-6 py-4 relative bg-gradient-to-b from-zinc-100 to-zinc-50">
         <div>
-          <p className="text-3xl font-bold text-main_red cursor-pointer" onClick={() => setPath('/')}>
+          <p
+            className="text-3xl font-bold text-main_red cursor-pointer"
+            onClick={() => setPath('/')}
+          >
             {nickname}
             <span className="text-white">.</span>
           </p>
         </div>
-        {isMobile ? <MobileNav path={path} /> : <Nav path={path} />}
+        {isMobile ? <MobileNav /> : <Nav />}
       </header>
     </div>
   );

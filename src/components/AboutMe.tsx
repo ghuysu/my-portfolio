@@ -1,6 +1,8 @@
-import { AboutMeProps } from '../interface';
+import { useContext } from 'react';
+import { DataContext } from '../stores/data-context';
 
-const AboutMe: React.FC<AboutMeProps> = ({ summary }) => {
+const AboutMe = () => {
+  const { summary } = useContext(DataContext);
   return (
     <div className="flex flex-col gap-y-6 w-full">
       <p className="text-3xl font-bold">About me</p>

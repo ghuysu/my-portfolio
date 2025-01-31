@@ -59,86 +59,18 @@ export interface Data {
   summary: Item[];
 }
 
-export interface HomeProps {
-  fullname: string;
-  about: string;
-  contact: Contact;
-  role: string[];
-}
-
-export interface RightSectionProps {
-  fullname: string;
-  about: string;
-  contact: Contact;
-  role: string[];
-}
-
 export interface AnimationBarsProps {
   loading: boolean;
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
-  path: string;
-}
-
-export interface ServicesProps {
-  services: Service[];
-}
-
-export interface AboutProps {
-  summary: Item[];
-  education: Certificate[];
-  skills: Skill[];
-}
-
-export interface AboutLeftSectionProps {
-  path: string;
-  setPath: React.Dispatch<React.SetStateAction<string>>;
-}
-
-export interface AboutRightSectionProps {
-  summary: Item[];
-  education: Certificate[];
-  skills: Skill[];
-  path: string;
-}
-
-export interface AboutMeProps {
-  summary: Item[];
-}
-
-export interface EducationProps {
-  education: Certificate[];
-}
-
-export interface SkillsProps {
-  skills: Skill[];
-}
-
-export interface ContactRightSectionProps {
-  email: string;
-  address: string;
-  phone: string;
-}
-
-export interface ContactProps {
-  email: string;
-  address: string;
-  phone: string;
-}
-
-export interface ProjectsProps {
-  projects: Project[];
 }
 
 export interface ProjectsLeftSectionProps {
   numberOfProjects: number;
-  typeOfProjects: string[];
-  path: string;
-  setPath: React.Dispatch<React.SetStateAction<string>>;
+  typeOfProjects: Item[];
 }
 
 export interface ProjectsRightSectionProps {
-  path: string;
-  typeOfProjects: string[];
+  typeOfProjects: Item[];
   projects: Project[];
   setNumberOfProjects: React.Dispatch<React.SetStateAction<number>>;
   setShowedProject: React.Dispatch<React.SetStateAction<Project | null>>;

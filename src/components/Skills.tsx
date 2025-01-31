@@ -1,7 +1,8 @@
-import { SkillsProps } from '../interface';
+import { useContext } from 'react';
+import { DataContext } from '../stores/data-context';
 
-const Skills: React.FC<SkillsProps> = ({ skills }) => {
-  console.log(skills);
+const Skills = () => {
+  const { skills } = useContext(DataContext);
   return (
     <div className="flex flex-col gap-y-6 w-full">
       <p className="text-3xl font-bold">Skills</p>

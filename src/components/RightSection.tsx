@@ -1,13 +1,9 @@
-import { RightSectionProps } from '../interface';
-import React, { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
+import { DataContext } from '../stores/data-context';
 
-const RightSection: React.FC<RightSectionProps> = ({
-  about,
-  fullname,
-  contact,
-  role,
-}) => {
+const RightSection = () => {
+  const { fullname, about, contact, role } = useContext(DataContext);
   const roleRef = useRef<HTMLDivElement>(null);
   const [currentRole, setCurrentRole] = useState<string>(role[0]);
   const roleIndex = useRef(0);
@@ -60,14 +56,14 @@ const RightSection: React.FC<RightSectionProps> = ({
         <div className="flex flex-row gap-4 text-3xl">
           <a
             href={contact.github}
-            target='_blank'
+            target="_blank"
             className="hover:text-main_red transition text-3xl"
           >
             <i className="fab fa-github"></i>
           </a>
           <a
             href={contact.linkedIn}
-            target='_blank'
+            target="_blank"
             rel="noopener noreferrer"
             className="hover:text-main_red transition text-3xl"
           >

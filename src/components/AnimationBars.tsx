@@ -1,12 +1,14 @@
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useRef, useCallback, useContext } from 'react';
 import { AnimationBarsProps } from '../interface';
 import gsap from 'gsap';
-
+import { PathContext } from '../stores/path-context';
+import { createPortal } from 'react-dom';
 const AnimationBars: React.FC<AnimationBarsProps> = ({
-  path,
   loading,
   setLoading,
 }) => {
+  const { path } = useContext(PathContext);
+
   // References for the bars
   const firstBar = useRef<HTMLDivElement>(null);
   const secondBar = useRef<HTMLDivElement>(null);
@@ -44,9 +46,9 @@ const AnimationBars: React.FC<AnimationBarsProps> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [path]);
 
-  return (
+  return createPortal(
     <div
-      className={`${!loading && 'hidden'} flex h-screen absolute top-0 left-0 right-0 z-10`}
+      className={`${!loading && 'hidden'} flex h-screen fixed inset-0`}
     >
       <div ref={firstBar} className="flex-1 bg-[#f30716]"></div>
       <div ref={secondBar} className="flex-1 bg-main_red"></div>
@@ -54,7 +56,7 @@ const AnimationBars: React.FC<AnimationBarsProps> = ({
       <div ref={fourthBar} className="flex-1 bg-[#a60711]"></div>
       <div ref={fifthBar} className="flex-1 bg-[#85050d]"></div>
     </div>
-  );
+  , document.getElementById('sub-root') as HTMLElement);
 };
 
 export default AnimationBars;
