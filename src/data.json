@@ -58,8 +58,8 @@
       "description": "Deliver end-to-end web solutions by developing both frontend and backend components, including APIs and user interfaces."
     },
     {
-      "name": "IoT Server Development",
-      "description": "Develop and maintain the server-side infrastructure for IoT solutions, focusing on device communication, data processing, and integration with cloud platforms for real-time monitoring and control."
+      "name": "Discord Bot Development",
+      "description": "Develop and maintain a Discord bot using JavaScript and the Discord.js SDK, focusing on real-time message processing, keyword-based responses, and integration with Discord server functionalities for seamless interaction."
     }
   ],
   "skills": [

@@ -1,7 +1,7 @@
-import { useContext } from 'react';
+import { memo, useContext } from 'react';
 import { DataContext } from '../stores/data-context';
 
-const Services = () => {
+const Services = memo(() => {
   const { services } = useContext(DataContext);
   return (
     <div className="bg-white text-black h-[calc(100vh-theme(height.20))] mx-6 sm:mx-16 md:mx-30 xl:mx-60 grid grid-cols-1 place-content-start md:place-content-center">
@@ -35,6 +35,6 @@ const Services = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Services;
