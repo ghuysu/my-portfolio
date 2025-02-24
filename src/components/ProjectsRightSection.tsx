@@ -69,11 +69,11 @@ const ProjectsRightSection: React.FC<ProjectsRightSectionProps> = ({
 }) => {
   function getNameFromPath(path: string) {
     let name = '';
-    typeOfProjects.forEach(type => {
-      if(type.value === path){
-        name = type.name
+    typeOfProjects.forEach((type) => {
+      if (type.value === path) {
+        name = type.name;
       }
-    })
+    });
     return name;
   }
 
@@ -84,7 +84,9 @@ const ProjectsRightSection: React.FC<ProjectsRightSectionProps> = ({
       setFilteredProjects(projects);
     } else {
       setFilteredProjects(
-        projects.filter((project) => project.type.includes(getNameFromPath(path))),
+        projects.filter((project) =>
+          project.type.includes(getNameFromPath(path)),
+        ),
       );
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

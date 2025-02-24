@@ -1,15 +1,16 @@
-import { useEffect, useRef, useState } from 'react';
+import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
-import Home from './pages/Home';
-import Projects from './pages/Projects';
 import AnimationBars from './components/AnimationBars';
-import Services from './pages/Services';
-import About from './pages/About';
-import Contact from './pages/Contact';
 import gsap from 'gsap';
-import NotFound from './pages/NotFound';
 import { AppContextProvider } from './stores/app-context-provider';
+
+const Home = lazy(() => import('./pages/Home'));
+const Projects = lazy(() => import('./pages/Projects'));
+const Services = lazy(() => import('./pages/Services'));
+const About = lazy(() => import('./pages/About'));
+const Contact = lazy(() => import('./pages/Contact'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -46,21 +47,23 @@ function App() {
               <Header />
             </div>
             <div ref={bodyRef}>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/about" element={<About />}>
-                  <Route path="/about/education" element={<About />} />
-                  <Route path="/about/skills" element={<About />} />
-                </Route>
-                <Route path="/projects" element={<Projects />}>
-                  <Route path="/projects/fullstack" element={<Projects />} />
-                  <Route path="/projects/frontend" element={<Projects />} />
-                  <Route path="/projects/backend" element={<Projects />} />
-                </Route>
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/*" element={<NotFound />} />
-              </Routes>
+              <Suspense fallback={<div>Loading...</div>}>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/services" element={<Services />} />
+                  <Route path="/about" element={<About />}>
+                    <Route path="/about/education" element={<About />} />
+                    <Route path="/about/skills" element={<About />} />
+                  </Route>
+                  <Route path="/projects" element={<Projects />}>
+                    <Route path="/projects/fullstack" element={<Projects />} />
+                    <Route path="/projects/frontend" element={<Projects />} />
+                    <Route path="/projects/backend" element={<Projects />} />
+                  </Route>
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/*" element={<NotFound />} />
+                </Routes>
+              </Suspense>
             </div>
           </div>
         </div>
